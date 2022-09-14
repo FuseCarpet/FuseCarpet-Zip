@@ -36,7 +36,7 @@ class gui:
         __tLabel__.pack()
 
         __agree__ = tk.Button(t, text="I agree", command=t.destroy)
-        __disagree__ = tk.Button(t, text="I disagree")
+        __disagree__ = tk.Button(t, text="I disagree", command=lambda:sys.exit(0))
 
         __agree__.pack()
         tk.Label(t, text="").pack()
