@@ -1,6 +1,6 @@
 from tkinter import *
 import carpet as c
-from carpet.carpet import genKey, encrypt, decrypt, encryptFile, decryptFile
+from carpet.carpet import genKey, encrypt, decrypt, encryptFile, decryptFile, gui
 import carpet.file_operations as fo
 import easygui
 import pyperclip
