@@ -12,6 +12,40 @@ import webview
 import enum
 import sys
 import subprocess
+import easygui
+import tkinter as tk
+
+class gui:
+    def terms(title="Terms Of Service", terms='By clicking "I agree", you agree to ...'):
+        while True:
+            _ = easygui.buttonbox(terms, title, ["I agree", "I disagree"])
+            if _ == "I disagree" or not _:
+                continue
+            else:
+                break
+    def terms2(title="Terms Of Service", terms='By clicking "I agree", you agree to ...'):
+        t = tk.Tk()
+        t.geometry(f"{round(900+len(terms))}x{round(600+len(terms)/10)}")
+        t.title(title)
+
+        __tLabel__ = tk.Label(t, text=terms)
+        __tLabel__.pack()
+
+        __agree__ = tk.Button(t, text="I agree", command=t.destroy)
+        __disagree__ = tk.Button(t, text="I disagree")
+
+        __agree__.pack()
+        tk.Label(t, text="").pack()
+        __disagree__.pack()
+
+        t.mainloop()
+
+
+def percent_of(num_a, num_b):
+    try:
+        return (num_a / num_b) * 100
+    except ZeroDivisionError:
+        return 0
 
 class hash:
     def sha256(text):
