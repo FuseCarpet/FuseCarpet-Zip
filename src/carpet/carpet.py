@@ -16,6 +16,15 @@ import easygui
 import tkinter as tk
 
 class gui:
+    __TOS_CLOSE__status_open = False
+    def __TOS_CLOSE__():
+        if not gui.__TOS_CLOSE__status_open:
+            gui.__TOS_CLOSE__status_open = True
+            easygui.msgbox("You can not close the terms of service without agreeing to them.")
+            gui.__TOS_CLOSE__status_open = False
+            
+    def __DisableClose__(widget: tk.Tk):
+        widget.protocol("WM_DELETE_WINDOW", gui.__TOS_CLOSE__)
     def terms(title="Terms Of Service", terms='By clicking "I agree", you agree to ...'):
         while True:
             _ = easygui.buttonbox(terms, title, ["I agree", "I disagree"])
@@ -27,6 +36,8 @@ class gui:
         t = tk.Tk()
         t.geometry(f"{round(900+len(terms))}x{round(600+len(terms)/10)}")
         t.title(title)
+
+        gui.__DisableClose__(t)
 
         __tLabel__ = tk.Label(t, text=terms)
         __tLabel__.pack()
