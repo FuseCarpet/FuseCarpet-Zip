@@ -9,7 +9,7 @@ import os
 gui.terms2(terms='''By clicking "I agree", you agree to these terms:
 
     1. No distributing copies of this software on anywhere other than https://github.com/FuseCarpet unless allowed by rule 2.
-    2. You are allowed to distribute this software IF IT IS MODIFIED and it does NOT make ANY money, with credits: Original made by FuseCarpet at https://github.com/FuseCarpet
+    2. You are allowed to distribute this software IF IT IS MODIFIED and it does NOT make ANY money, with credits: "Original made by FuseCarpet at https://github.com/FuseCarpet"
 ''')
 
 class _status:
